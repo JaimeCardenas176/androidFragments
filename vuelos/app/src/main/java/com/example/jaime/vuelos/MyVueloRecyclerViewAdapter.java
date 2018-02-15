@@ -8,18 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jaime.vuelos.VueloFragment.OnListFragmentInteractionListener;
-import com.example.jaime.vuelos.dummy.DummyContent.DummyItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.Date;
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
+
 public class MyVueloRecyclerViewAdapter extends RecyclerView.Adapter<MyVueloRecyclerViewAdapter.ViewHolder> {
 
     private Context contexto;
@@ -29,6 +23,7 @@ public class MyVueloRecyclerViewAdapter extends RecyclerView.Adapter<MyVueloRecy
         this.contexto = contexto;
         this.mValues = mValues;
     }
+
     //aqui se carga el vuelo fragment?
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -44,9 +39,10 @@ public class MyVueloRecyclerViewAdapter extends RecyclerView.Adapter<MyVueloRecy
         holder.salida.setText(holder.mItem.getSalida().toString());
         holder.destino.setText(holder.mItem.getDestino().toString());
         holder.plazas.setText(String.valueOf(holder.mItem.getPlazas()));
+
         Picasso.with(contexto)
                 .load(holder.mItem.getUrlImageCompany())
-                .resize(600,150)
+                .resize(600, 150)
                 .centerCrop()
                 .into(holder.foto);
     }
@@ -55,6 +51,7 @@ public class MyVueloRecyclerViewAdapter extends RecyclerView.Adapter<MyVueloRecy
     public int getItemCount() {
         return mValues.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView salida;
@@ -73,4 +70,6 @@ public class MyVueloRecyclerViewAdapter extends RecyclerView.Adapter<MyVueloRecy
             salida = view.findViewById(R.id.salida);
         }
 
+    }
 }
+

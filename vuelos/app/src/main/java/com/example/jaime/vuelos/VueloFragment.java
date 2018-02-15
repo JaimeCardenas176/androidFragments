@@ -10,8 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jaime.vuelos.dummy.DummyContent;
-import com.example.jaime.vuelos.dummy.DummyContent.DummyItem;
+
 
 import java.util.ArrayList;
 import java.util.Date;
